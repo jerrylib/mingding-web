@@ -6,9 +6,6 @@ import NotFound from '../component/status/404'
 import Forbidden from '../component/status/403'
 import Loading from '../component/status/Loading'
 
-// 路由引入
-import demoRoute from './demo'
-
 /**
  * 路由配置，包括：
  *   默认组件配置，例如404，403, loading
@@ -36,6 +33,5 @@ router.register({
   home: {
     component: Home,
     index: true
-  },
-  demo: demoRoute
+  }
 })
