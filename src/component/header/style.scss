@@ -1,0 +1,19 @@
+.wrapper {
+  height: 300px;
+
+  .logoCol {
+    height: 240px;
+  }
+
+  .menuItem {
+    line-height: 36px;
+    text-align: center;
+    border: 1px solid #eee;
+    background-color: #ddd;
+    transform: rotate3d(15, -30, 9, -17deg);
+
+    a {
+      color: #aeaeae;
+    }
+  }
+}

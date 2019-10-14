@@ -1,4 +1,5 @@
 import { router } from '@gem-mine/durex-router'
+import { asyncLoader } from '../util/loader'
 
 // 页面组件
 import Home from '../page/home'
@@ -32,6 +33,31 @@ router.config({
 router.register({
   home: {
     component: Home,
-    index: true
+    redirect: 'page.page1'
+  },
+  page: {
+    path: '/page',
+    index: true,
+    component: asyncLoader('page/index'),
+    sub: {
+      page1: {
+        path: '/page1',
+        index: true,
+        component: asyncLoader('page/page1')
+      },
+      page2: {
+        path: '/page2',
+        component: asyncLoader('page/page2')
+      },
+      page3: {
+        path: '/page3',
+        component: asyncLoader('page/page3')
+      },
+      page4: {
+        path: '/page4',
+        component: asyncLoader('page/page4')
+      }
+    }
   }
+
 })

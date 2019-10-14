@@ -20,6 +20,7 @@ module.exports = {
   ],
   "rules": {
     "no-var": 2,
+    "no-unused-vars": 1,
     "camelcase": 0,
     "semi": [2, "never"],
     "linebreak-style": 0,

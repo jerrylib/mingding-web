@@ -1,0 +1,10 @@
+.container {
+  overflow: auto;
+  height: 100%;
+  background: url(./../../asset//images/BBG.jpg);
+
+  .body {
+    height: calc(100% - 600px);
+    min-height: 900px;
+  }
+}
