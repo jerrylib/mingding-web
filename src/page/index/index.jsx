@@ -5,7 +5,7 @@ import Footer from './../../component/footer'
 import style from './style.scss'
 import { getConfig } from './../../services/data-service'
 import { actions, smart } from '@gem-mine/durex'
-import { Divider } from 'antd'
+import { Divider, Carousel, Col } from 'antd'
 
 @smart(
   state => {
@@ -30,6 +30,23 @@ class Index extends Component {
     console.log('menus=', menus)
     return <div className={style.container}>
       <Header menus={menus} />
+      <Divider />
+      <Col span={22} push={1}>
+        <Carousel autoplay>
+          <div>
+            <img className={style.imageItem} src="http://localhost:8080/images/1.jpg" alt="" />
+          </div>
+          <div>
+            <img className={style.imageItem} src="http://localhost:8080/images/2.jpg" alt="" />
+          </div>
+          <div>
+            <img className={style.imageItem} src="http://localhost:8080/images/3.jpg" alt="" />
+          </div>
+          <div>
+            <img className={style.imageItem} src="http://localhost:8080/images/4.jpg" alt="" />
+          </div>
+        </Carousel>
+      </Col>
       <div className={style.body}>
         <Routes path="page" />
       </div>

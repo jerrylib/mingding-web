@@ -4,7 +4,8 @@ durex.model({
   name: 'page',
   state: {
     menus: [],
-    products: []
+    products: [],
+    contactInfo: {}
   },
   reducers: {
     init(state, { payload }) {

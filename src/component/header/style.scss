@@ -1,19 +1,42 @@
 .wrapper {
-  height: 300px;
-
   .logoCol {
-    height: 240px;
+    & > .ant-col {
+      height: 100%;
+    }
+
+    .logo {
+      height: 100px;
+      background-repeat: no-repeat;
+      background-image: url('http://www.fjkljd.com/images/logo.png');
+    }
+
+    .name {
+      font-size: 27px;
+      letter-spacing: 6px;
+      font-weight: bold;
+    }
+
+    .phone {
+      line-height: 36px;
+
+      .phoneNumber {
+        color: red;
+        font-weight: bold;
+        font-style: italic;
+        font-size: 20px;
+      }
+    }
   }
 
   .menuItem {
     line-height: 36px;
     text-align: center;
     border: 1px solid #eee;
-    background-color: #ddd;
+    background-color: #1890ff;
     transform: rotate3d(15, -30, 9, -17deg);
 
     a {
-      color: #aeaeae;
+      color: #fff;
     }
   }
 }

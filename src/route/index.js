@@ -31,31 +31,35 @@ router.config({
  * exact: 可选 {boolean}是否完全匹配
  */
 router.register({
-  home: {
-    component: Home,
-    redirect: 'page.page1'
-  },
   page: {
-    path: '/page',
+    path: '/',
     index: true,
     component: asyncLoader('page/index'),
     sub: {
-      page1: {
-        path: '/page1',
+      main: {
+        path: '/main',
         index: true,
-        component: asyncLoader('page/page1')
+        component: asyncLoader('page/main')
       },
-      page2: {
-        path: '/page2',
-        component: asyncLoader('page/page2')
+      aboutus: {
+        path: '/aboutus',
+        component: asyncLoader('page/aboutus')
       },
-      page3: {
-        path: '/page3',
-        component: asyncLoader('page/page3')
+      news: {
+        path: '/news',
+        component: asyncLoader('page/news')
       },
-      page4: {
-        path: '/page4',
-        component: asyncLoader('page/page4')
+      products: {
+        path: '/products',
+        component: asyncLoader('page/products')
+      },
+      hr: {
+        path: '/hr',
+        component: asyncLoader('page/hr')
+      },
+      contact: {
+        path: '/contact',
+        component: asyncLoader('page/contact')
       }
     }
   }
