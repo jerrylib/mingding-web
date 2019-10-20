@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
 import { Card } from 'antd'
-class AboutUs extends Component {
+class AboutUsCard extends Component {
   constructor(props) {
     super(props)
     this.state = {}
   }
   render() {
-    return (<Card title="关于我们" extra={<a>More&nbsp;>&nbsp;</a>} style={{ width: 300, margin: 'auto' }}>
+    return (<Card title="关于我们" extra={<a>More&nbsp;>&nbsp;</a>} style={{ width: 300 }}>
       <p>> 公司简介</p>
       <p>> 公司文化</p>
       <p>> 组织机构</p>
@@ -16,4 +16,4 @@ class AboutUs extends Component {
   }
 }
 
-export default AboutUs
+export default AboutUsCard

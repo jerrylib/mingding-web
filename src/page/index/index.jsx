@@ -10,7 +10,8 @@ import { Divider, Carousel, Col } from 'antd'
 @smart(
   state => {
     return {
-      menus: state.page.menus
+      menus: state.page.menus,
+      carousels: state.page.carousels
     }
   }
 )
@@ -26,30 +27,23 @@ class Index extends Component {
   }
 
   render() {
-    const { menus } = this.props
-    console.log('menus=', menus)
+    const { menus = [], carousels = [] } = this.props
     return <div className={style.container}>
       <Header menus={menus} />
-      <Divider />
-      <Col span={22} push={1}>
-        <Carousel autoplay>
-          <div>
-            <img className={style.imageItem} src="http://localhost:8080/images/1.jpg" alt="" />
-          </div>
-          <div>
-            <img className={style.imageItem} src="http://localhost:8080/images/2.jpg" alt="" />
-          </div>
-          <div>
-            <img className={style.imageItem} src="http://localhost:8080/images/3.jpg" alt="" />
-          </div>
-          <div>
-            <img className={style.imageItem} src="http://localhost:8080/images/4.jpg" alt="" />
-          </div>
+      <Col span={22} offset={1}>
+        <Carousel easing autoplay>
+          {
+            carousels.map(carousel => <div key={carousel}>
+              <img className={style.imageItem} src={carousel} alt="" />
+            </div>)
+          }
         </Carousel>
       </Col>
-      <div className={style.body}>
-        <Routes path="page" />
-      </div>
+      <Col span={22} offset={1}>
+        <div className={style.body}>
+          <Routes path="page" />
+        </div>
+      </Col>
       <Divider />
       <Footer />
     </div>

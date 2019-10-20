@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
-import { Row, Col, Carousel } from 'antd'
+import { Row, Col, Card } from 'antd'
 import style from './style.scss'
-import AboutUs from '../../component/aboutus/index'
+import AboutUsCard from '../../component/about-us-card/index'
 
-class Page2 extends Component {
+class AboutUs extends Component {
   constructor(props) {
     super(props)
     this.state = {}
@@ -11,26 +11,19 @@ class Page2 extends Component {
   render() {
     return <Row>
       <Col span={8}>
-        <AboutUs />
+        <AboutUsCard />
       </Col>
-      <Col span={20} offset={2} >
-        <Carousel autoplay>
-          <div>
-            <img className={style.imageItem} src="http://localhost:28000/images/1.jpg" alt="" />
-          </div>
-          <div>
-            <img className={style.imageItem} src="http://localhost:28000/images/2.jpg" alt="" />
-          </div>
-          <div>
-            <img className={style.imageItem} src="http://localhost:28000/images/3.jpg" alt="" />
-          </div>
-          <div>
-            <img className={style.imageItem} src="http://localhost:28000/images/4.jpg" alt="" />
-          </div>
-        </Carousel>
+      <Col span={16} className={style.center} >
+        <Card title="公司简介" extra={<a>More&nbsp;>&nbsp;</a>}>
+          <p>> 公司简介</p>
+          <p>> 公司文化</p>
+          <p>> 组织机构</p>
+          <p>> 营销网络</p>
+          <p>> 年中大促</p>
+        </Card>
       </Col>
     </Row>
   }
 }
 
-export default Page2
+export default AboutUs

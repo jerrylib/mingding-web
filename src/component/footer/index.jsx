@@ -13,7 +13,7 @@ import { first } from 'lodash'
 )
 class Footer extends Component {
   render() {
-    const { contactInfo } = this.props
+    const { contactInfo = {} } = this.props
     const { address, name, email, tels } = contactInfo
     return (<div className={style.wrapper}>
       <Col span={18} offset={6}>版权所有：Copyright {1 + new Date().getFullYear()} {name} 客服信箱：{email} 公司电话：{first(tels)}</Col>

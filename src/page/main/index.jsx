@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Col, Row, Card, Typography, Divider } from 'antd'
 import { actions, smart } from '@gem-mine/durex'
-import AboutUs from '../../component/aboutus/index'
+import AboutUs from '../../component/about-us-card/index'
 
 const { Title, Paragraph, Text } = Typography
 
@@ -23,7 +23,7 @@ class Main extends Component {
       <Col span={8}>
         <AboutUs />
       </Col>
-      <Col span={14} offset={1}>
+      <Col style={{ backgroundColor: '#fefefe', padding: 10, border: '1px solid #e8e8e8' }} span={16}>
         <Typography>
           <Title>公司简介</Title>
           <Paragraph>
@@ -31,7 +31,7 @@ class Main extends Component {
           </Paragraph>
         </Typography>
       </Col>
-    </Row>
+    </Row >
   }
 }
 

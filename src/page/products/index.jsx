@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Col, Card, Row, Modal } from 'antd'
 import { smart } from '@gem-mine/durex'
+import ProductsCard from '../../component/products-card/index'
 const { Meta } = Card
 
 @smart(
@@ -23,23 +24,28 @@ class Products extends Component {
   }
 
   render() {
-    const { products } = this.props
+    const { products = [] } = this.props
     const { currentProduct } = this.state
-    return (<Row>
-      {
-        products.map((product, index) => {
-          return <Col span={6} style={{ paddingBottom: 10 }} key={index}>
-            <Card
-              hoverable
-              onClick={() => this.handleClick(product)}
-              style={{ width: 240, margin: 'auto' }}
-              cover={<img alt="example" src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" />}
-            >
-              <Meta title="Europe Street beat" description="www.instagram.com" />
-            </Card>
-          </Col>
-        })
-      }
+    return <Col>
+      <Col span={8}>
+        <ProductsCard />
+      </Col>
+      <Col span={16} style={{ backgroundColor: '#fefefe', border: '1px solid #e8e8e8' }}>
+        {
+          products.map((product, index) => {
+            return <Col span={7} offset={1} style={{ paddingBottom: 10 }} key={index}>
+              <Card
+                hoverable
+                onClick={() => this.handleClick(product)}
+                style={{ margin: 'auto' }}
+                cover={<img alt="example" src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" />}
+              >
+                <Meta title="Europe Street beat" description="www.instagram.com" />
+              </Card>
+            </Col>
+          })
+        }
+      </Col>
       <Modal
         title={null}
         visible={!!currentProduct}
@@ -51,7 +57,7 @@ class Products extends Component {
         <p>Some contents...</p>
         <p>Some contents...</p>
       </Modal>
-    </Row>)
+    </Col>
   }
 }
 
