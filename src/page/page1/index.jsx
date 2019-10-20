@@ -12,9 +12,9 @@ class Page1 extends Component {
     return <Row>
       <Col span={8}>
         <Card title="Default size card" extra={<a>More&nbsp;>&nbsp;</a>} style={{ width: 300, margin: 'auto' }}>
-          <p>> Card content</p>
-          <p>> Card content</p>
-          <p>> Card content</p>
+          <p>> Card content3</p>
+          <p>> Card content2</p>
+          <p>> Card content2</p>
         </Card>
       </Col>
       <Col span={14} offset={1}>
@@ -39,7 +39,7 @@ class Page1 extends Component {
           <Paragraph>
             We supply a series of design principles, practical patterns and high quality design resources
       (<Text code>Sketch</Text> and <Text code>Axure</Text>), to help people create their product
-                                                                                                                                                      prototypes beautifully and efficiently.
+                                                                                                                                                                  prototypes beautifully and efficiently.
           </Paragraph>
 
           <Paragraph>
