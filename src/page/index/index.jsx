@@ -30,8 +30,8 @@ class Index extends Component {
     const { menus = [], carousels = [] } = this.props
     return <div className={style.container}>
       <Header menus={menus} />
-      <Col span={22} offset={1}>
-        <Carousel easing autoplay>
+      <Col span={24}>
+        <Carousel easing autoplay style={{ maxWidth: '1000px', margin: 'auto' }}>
           {
             carousels.map(carousel => <div key={carousel}>
               <img className={style.imageItem} src={carousel} alt="" />
@@ -39,8 +39,8 @@ class Index extends Component {
           }
         </Carousel>
       </Col>
-      <Col span={22} offset={1}>
-        <div className={style.body}>
+      <Col span={24}>
+        <div className={style.body} style={{ maxWidth: '1000px', margin: 'auto' }}>
           <Routes path="page" />
         </div>
       </Col>

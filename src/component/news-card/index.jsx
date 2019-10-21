@@ -19,7 +19,7 @@ class NewsCard extends Component {
     const { articles = [] } = this.props
     const articleTypes = groupBy(articles, 'type')
     return (
-      <Card title="新闻中心" extra={<a>More&nbsp;>&nbsp;</a>} style={{ width: 300 }}>
+      <Card title="新闻中心" extra={<a>More&nbsp;>&nbsp;</a>}>
         {
           Object.keys(articleTypes).map(articleType => <p className="article-item" key={articleType}>> {articleType}</p>)
         }

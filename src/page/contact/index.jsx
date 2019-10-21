@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Col } from 'antd'
-import AboutUs from './../../component/about-us-card/index'
+import ContactCard from './../../component/contact-card/index'
 class Contact extends Component {
   constructor(props) {
     super(props)
@@ -8,7 +8,7 @@ class Contact extends Component {
   }
   render() {
     return <Col span={24}>
-      <AboutUs />
+      <ContactCard />
     </Col>
   }
 }

@@ -19,7 +19,7 @@ class ProductsCard extends Component {
     const { products = [] } = this.props
     const productTypes = groupBy(products, 'type')
     return (
-      <Card title="产品类别" extra={<a>More&nbsp;>&nbsp;</a>} style={{ width: 300 }}>
+      <Card title="产品类别" extra={<a>More&nbsp;>&nbsp;</a>}>
         {
           Object.keys(productTypes).map(articleType => <p key={articleType}>> {articleType}</p>)
         }

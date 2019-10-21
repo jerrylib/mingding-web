@@ -6,7 +6,7 @@ class AboutUsCard extends Component {
     this.state = {}
   }
   render() {
-    return (<Card title="关于我们" extra={<a>More&nbsp;>&nbsp;</a>} style={{ width: 300 }}>
+    return (<Card title="关于我们" extra={<a>More&nbsp;>&nbsp;</a>}>
       <p>> 公司简介</p>
       <p>> 公司文化</p>
       <p>> 组织机构</p>

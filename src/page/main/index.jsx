@@ -20,16 +20,17 @@ class Main extends Component {
   render() {
     const { descriptions } = this.props
     return <Row>
-      <Col span={8}>
+      <Col span={8} style={{ paddingRight: 5 }}>
         <AboutUs />
       </Col>
       <Col style={{ backgroundColor: '#fefefe', padding: 10, border: '1px solid #e8e8e8' }} span={16}>
-        <Typography>
-          <Title>公司简介</Title>
-          <Paragraph>
-            {descriptions}
-          </Paragraph>
-        </Typography>
+        <Card title="热销产品" extra={<a>More&nbsp;>&nbsp;</a>}>
+          <p>> 公司简介</p>
+          <p>> 公司文化</p>
+          <p>> 组织机构</p>
+          <p>> 营销网络</p>
+          <p>> 年中大促</p>
+        </Card>
       </Col>
     </Row >
   }

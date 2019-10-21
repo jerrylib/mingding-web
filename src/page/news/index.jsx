@@ -28,7 +28,7 @@ class News extends Component {
     const { articles } = this.props
     const { type } = this.state
     return (<Row>
-      <Col span={8}>
+      <Col span={8} style={{ paddingRight: 5 }}>
         <NewsCard onChange={this.onChange} />
       </Col>
       <Col span={16} >

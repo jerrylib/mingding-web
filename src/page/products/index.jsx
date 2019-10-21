@@ -27,7 +27,7 @@ class Products extends Component {
     const { products = [] } = this.props
     const { currentProduct } = this.state
     return <Col>
-      <Col span={8}>
+      <Col span={8} style={{ paddingRight: 5 }}>
         <ProductsCard />
       </Col>
       <Col span={16} style={{ backgroundColor: '#fefefe', border: '1px solid #e8e8e8' }}>
