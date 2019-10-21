@@ -69,6 +69,7 @@
     "postcss-calc": "^7.0.1",
     "postcss-cssnext": "^3.1.0",
     "postcss-import": "^12.0.1",
+    "reactjs-swiper": "^0.1.0",
     "stylelint": "^9.10.1",
     "stylelint-config-recommended": "^2.1.0",
     "stylelint-config-standard": "^18.2.0"
