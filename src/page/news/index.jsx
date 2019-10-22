@@ -3,14 +3,8 @@ import { Row, Col, Card } from 'antd'
 import NewsCard from './../../component/news-card'
 import { smart } from '@gem-mine/durex'
 import { filter } from 'lodash'
+import ArticleList from './../../component/article-list/index'
 
-@smart(
-  state => {
-    return {
-      articles: state.page.articles
-    }
-  }
-)
 class News extends Component {
   constructor(props) {
     super(props)
@@ -25,18 +19,13 @@ class News extends Component {
     })
   }
   render() {
-    const { articles } = this.props
     const { type } = this.state
     return (<Row>
       <Col span={8} style={{ paddingRight: 5 }}>
         <NewsCard onChange={this.onChange} />
       </Col>
       <Col span={16} >
-        <Card title={type} extra={<a>More&nbsp;>&nbsp;</a>}>
-          {
-            filter(articles, { type }).map(({ id, title }) => <p key={id}>> {title}</p>)
-          }
-        </Card>
+        <ArticleList type={type} />
       </Col>
     </Row>)
   }

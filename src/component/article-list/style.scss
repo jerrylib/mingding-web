@@ -1,0 +1,8 @@
+.articleItem {
+  cursor: pointer;
+
+  &:hover {
+    background-color: #03a9f4;
+    color: #fefefe;
+  }
+}
