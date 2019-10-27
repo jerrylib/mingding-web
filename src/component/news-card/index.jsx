@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Card } from 'antd'
 import { smart } from '@gem-mine/durex'
-import { groupBy } from 'lodash'
+import { groupBy, isEqual } from 'lodash'
 import style from './style.scss'
 
 @smart(
@@ -17,13 +17,15 @@ class NewsCard extends Component {
     this.state = {}
   }
   render() {
-    const { articles = [], onChange } = this.props
+    const { articles = [], onChange, type } = this.props
     const articleTypes = groupBy(articles, 'type')
     return (
-      <Card title="新闻中心" extra={<a>More&nbsp;>&nbsp;</a>}>
+      <Card title="新闻中心">
         {
           Object.keys(articleTypes).map(articleType =>
-            <p className={style.articleItem} onClick={() => onChange(articleType)} key={articleType}>> {articleType}</p>)
+            <p className={style.articleItem}
+              onClick={() => onChange(articleType)}
+              key={articleType}>{isEqual(articleType, type) && '> '}{articleType}</p>)
         }
       </Card>
     )

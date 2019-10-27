@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
 import { Col, Row } from 'antd'
-import { actions, smart } from '@gem-mine/durex'
+import { smart } from '@gem-mine/durex'
 import AboutUs from '../../component/about-us-card/index'
 import ArticleList from '../../component/article-list/index'
+import HotSales from '../../component/hot-sales/index'
 
 @smart(
   state => {
@@ -18,14 +19,15 @@ class Main extends Component {
     this.state = {}
   }
   render() {
-    const { descriptions } = this.props
     return <Row>
       <Col span={8} style={{ paddingRight: 5 }}>
+        <HotSales />
         <AboutUs />
       </Col>
       <Col style={{ backgroundColor: '#fefefe' }} span={16}>
         <ArticleList />
       </Col>
+
     </Row >
   }
 }

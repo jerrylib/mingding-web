@@ -43,11 +43,33 @@ router.register({
       },
       aboutus: {
         path: '/aboutus',
-        component: asyncLoader('page/aboutus')
+        component: asyncLoader('page/aboutus'),
+        sub: {
+          detail: {
+            index: true,
+            path: '/company-detail',
+            component: asyncLoader('page/aboutus/company-detail')
+          },
+          line: {
+            path: '/company-line',
+            component: asyncLoader('page/aboutus/company-line')
+          }
+        }
       },
       news: {
         path: '/news',
-        component: asyncLoader('page/news')
+        component: asyncLoader('page/news'),
+        sub: {
+          list: {
+            index: true,
+            path: '/news-list',
+            component: asyncLoader('page/news/list')
+          },
+          detail: {
+            path: '/news-detail/:id',
+            component: asyncLoader('page/news/detail')
+          }
+        }
       },
       products: {
         path: '/products',

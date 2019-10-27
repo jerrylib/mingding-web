@@ -2,7 +2,6 @@
   cursor: pointer;
 
   &:hover {
-    background-color: #03a9f4;
-    color: #fefefe;
+    border-bottom: 1px dashed #03a9f4;
   }
 }

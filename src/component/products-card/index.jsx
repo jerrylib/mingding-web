@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Card } from 'antd'
 import { smart } from '@gem-mine/durex'
-import { groupBy } from 'lodash'
+import { groupBy, isEqual } from 'lodash'
 import style from './style.scss'
 
 @smart(
@@ -12,18 +12,18 @@ import style from './style.scss'
   }
 )
 class ProductsCard extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {}
-  }
   render() {
-    const { products = [], onChange } = this.props
+    const { products = [], onChange, type } = this.props
     const productTypes = groupBy(products, 'type')
     return (
-      <Card title="产品类别" extra={<a>More&nbsp;>&nbsp;</a>}>
+      <Card title="产品类别">
+        <p className={style.productTypeItem}
+          onClick={() => onChange('')}>{isEqual(type, '') && '> '}全部{}</p>
         {
           Object.keys(productTypes).map(productType =>
-            <p className={style.productTypeItem} onClick={() => onChange(productType)} key={productType}>> {productType}</p>)
+            <p className={style.productTypeItem}
+              onClick={() => onChange(productType)}
+              key={productType}>{isEqual(type, productType) && '> '} {productType}</p>)
         }
       </Card>
     )

@@ -19,7 +19,7 @@ class ContactCard extends Component {
   render() {
     const { contactInfo = {} } = this.props
     const { tels = [], fox, email, address } = contactInfo
-    return (<Card title="联系我们" extra={<a>More&nbsp;>&nbsp;</a>} style={{ width: 300 }}>
+    return (<Card title="联系我们" style={{ width: 300 }}>
       {
         tels.map(tel => <p key={tel}>电&nbsp;话： {tel}</p>)
       }

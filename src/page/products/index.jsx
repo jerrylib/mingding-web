@@ -34,7 +34,7 @@ class Products extends Component {
     const { currentProduct, type } = this.state
     return <Col>
       <Col span={8} style={{ paddingRight: 5 }}>
-        <ProductsCard onChange={this.onTypeChange} />
+        <ProductsCard type={type} onChange={this.onTypeChange} />
       </Col>
       <Col span={16} style={{ backgroundColor: '#fefefe', border: '1px solid #e8e8e8' }}>
         {
@@ -47,7 +47,7 @@ class Products extends Component {
                 style={{ margin: 'auto' }}
                 cover={<img alt="example" style={{ height: 150 }} src={logo || 'https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png'} />}
               >
-                <Meta title={title} description="www.instagram.com" />
+                <Meta title={title} description="技术参数：220v" />
               </Card>
             </Col>
           })
