@@ -2,7 +2,6 @@ import { router } from '@gem-mine/durex-router'
 import { asyncLoader } from '../util/loader'
 
 // 页面组件
-import Home from '../page/home'
 import NotFound from '../component/status/404'
 import Forbidden from '../component/status/403'
 import Loading from '../component/status/Loading'

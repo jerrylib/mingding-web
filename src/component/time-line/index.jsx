@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
-import { Timeline as TimeLineAntd, Icon } from 'antd'
+import { Timeline as TimeLineAntd } from 'antd'
 import { smart } from '@gem-mine/durex'
 import { map, reverse } from 'lodash'
+import intl from '@gem-mine/intl'
 const { Item } = TimeLineAntd
 
 @smart(
@@ -23,7 +24,7 @@ class TimeLine extends Component {
         {
           map(reverse(timeLine), (timeLineItem, index) => {
             const { title, date } = timeLineItem
-            return <Item key={index}>{title} {date}</Item>
+            return <Item key={index}>{intl.get(title)} {date}</Item>
           })
         }
       </TimeLineAntd>

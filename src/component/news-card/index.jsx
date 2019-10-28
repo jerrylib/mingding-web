@@ -3,6 +3,7 @@ import { Card } from 'antd'
 import { smart } from '@gem-mine/durex'
 import { groupBy, isEqual } from 'lodash'
 import style from './style.scss'
+import intl from '@gem-mine/intl'
 
 @smart(
   state => {
@@ -20,12 +21,12 @@ class NewsCard extends Component {
     const { articles = [], onChange, type } = this.props
     const articleTypes = groupBy(articles, 'type')
     return (
-      <Card title="新闻中心">
+      <Card title={intl.get('新闻中心')}>
         {
           Object.keys(articleTypes).map(articleType =>
             <p className={style.articleItem}
               onClick={() => onChange(articleType)}
-              key={articleType}>{isEqual(articleType, type) && '> '}{articleType}</p>)
+              key={articleType}>{isEqual(articleType, type) && '> '}{intl.get(articleType)}</p>)
         }
       </Card>
     )

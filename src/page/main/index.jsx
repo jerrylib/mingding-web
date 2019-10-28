@@ -27,7 +27,6 @@ class Main extends Component {
       <Col style={{ backgroundColor: '#fefefe' }} span={16}>
         <ArticleList />
       </Col>
-
     </Row >
   }
 }

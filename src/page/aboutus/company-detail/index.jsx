@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Typography } from 'antd'
-import { actions, smart } from '@gem-mine/durex'
+import { smart } from '@gem-mine/durex'
+import intl from '@gem-mine/intl'
 const { Title, Paragraph } = Typography
 
 @smart(
@@ -19,7 +20,7 @@ class CompanyDetail extends Component {
     const { descriptions } = this.props
     return (
       <Typography>
-        <Title>公司简介</Title>
+        <Title>{intl.get('公司简介')}</Title>
         <Paragraph>
           {descriptions}
         </Paragraph>

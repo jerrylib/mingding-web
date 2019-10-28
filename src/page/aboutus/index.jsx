@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import { Row, Col, Card, Typography } from 'antd'
-import style from './style.scss'
+import { Row, Col } from 'antd'
+import './style.scss'
 import AboutUsCard from '../../component/about-us-card/index'
 import { Routes } from '@gem-mine/durex-router'
 

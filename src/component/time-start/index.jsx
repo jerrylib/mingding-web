@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Statistic } from 'antd'
-import { actions, smart } from '@gem-mine/durex'
+import { smart } from '@gem-mine/durex'
+import intl from '@gem-mine/intl'
 
 @smart(
   state => {
@@ -27,7 +28,7 @@ class TimeStart extends Component {
   render() {
     const { seconds } = this.state
     return (
-      <Statistic title="我们已经成立（秒）" value={seconds} precision={3} />
+      <Statistic title={intl.get('我们已经成立（秒）')} value={seconds} precision={3} />
     )
   }
 }

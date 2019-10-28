@@ -3,7 +3,8 @@ import { Link, urlFor } from '@gem-mine/durex-router'
 import style from './style.scss'
 import { Row, Col, Icon } from 'antd'
 import { smart } from '@gem-mine/durex'
-import { first } from 'lodash'
+import { first, isEmpty } from 'lodash'
+import intl from '@gem-mine/intl'
 
 @smart(
   state => {
@@ -19,8 +20,8 @@ class Header extends Component {
       currentTab: ''
     }
   }
-  handleChange = event => {
-
+  setLanguage = lang => {
+    intl.setLocale(lang)
   }
   addFavorite = () => {
     const title = '我的站点'
@@ -56,7 +57,10 @@ class Header extends Component {
 
   render() {
     const { menus } = this.props
-    const { contactInfo = {} } = this.props
+    const { contactInfo } = this.props
+    if (isEmpty(contactInfo)) {
+      return <div />
+    }
     const { name, eName, tels } = contactInfo
     return <div className={style.wrapper}>
       <Row>
@@ -65,17 +69,19 @@ class Header extends Component {
             <div className={style.logo} />
           </Col>
           <Col span={12} style={{ padding: '25px 0' }}>
-            <span className={style.name}>{name}</span>
-            <p>{eName}</p>
+            <span className={style.name}>{intl.get(name)}</span>
+            <p>{intl.get(eName)}</p>
           </Col>
           <Col span={6} style={{ padding: 29 }}>
             <Col span={24}>
-              <a onClick={this.setIndex}>设为首页</a> | <a onClick={this.addFavorite}>加入收藏</a> | <Link to={urlFor('page.contact')}>
-                联系我们
+              {/* <a onClick={this.setIndex}>设为首页</a>
+              | <a onClick={this.addFavorite}>加入收藏</a>  */}
+              <a onClick={() => this.setLanguage('zh-CN')}>中文</a> | <a onClick={() => this.setLanguage('en')}>English</a> | <Link to={urlFor('page.contact')}>
+                {intl.get('联系我们')}
               </Link>
             </Col>
             <Col span={24} className={style.phone}>
-              <Icon type="phone" /> 服务电话：<span className={style.phoneNumber}>{first(tels)}</span>
+              <Icon type="phone" /> {intl.get('服务电话')}：<span className={style.phoneNumber}>{first(tels)}</span>
             </Col>
           </Col>
         </Col>
@@ -85,7 +91,7 @@ class Header extends Component {
               menus.map((menu, index) => {
                 return <Col span={4} className={style.menuItem} key={index} >
                   <Link to={urlFor(menu.path)}>
-                    {menu.title}
+                    {intl.get(menu.title)}
                   </Link>
                 </Col>
               })

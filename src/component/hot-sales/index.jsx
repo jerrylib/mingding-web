@@ -4,6 +4,7 @@ import { smart } from '@gem-mine/durex'
 import { filter, map } from 'lodash'
 import { Link, urlFor } from '@gem-mine/durex-router'
 import style from './style'
+import intl from '@gem-mine/intl'
 
 @smart(
   state => {
@@ -23,8 +24,8 @@ class HotSales extends Component {
     const hotProducts = filter(products, ({ id }) => hotSales.includes(id))
     console.log('hotProducts=', hotProducts)
     return (
-      <Card title="热销商品" extra={<Link to={urlFor('page.products')}>
-        <a>More&nbsp;>&nbsp;</a>
+      <Card title={intl.get('热销商品')} extra={<Link to={urlFor('page.products')}>
+        <a>{intl.get('更多')}&nbsp;>&nbsp;</a>
       </Link>}>
         <Col span={24} >
           <Carousel easing autoplay effect={'fade'}>

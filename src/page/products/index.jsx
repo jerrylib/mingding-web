@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
-import { Col, Card, Row, Modal } from 'antd'
+import { Col, Card, Modal } from 'antd'
 import { smart } from '@gem-mine/durex'
 import { filter } from 'lodash'
 import ProductsCard from '../../component/products-card/index'
+import intl from '@gem-mine/intl'
 const { Meta } = Card
 
 @smart(
@@ -47,7 +48,7 @@ class Products extends Component {
                 style={{ margin: 'auto' }}
                 cover={<img alt="example" style={{ height: 150 }} src={logo || 'https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png'} />}
               >
-                <Meta title={title} description="技术参数：220v" />
+                <Meta title={intl.get(title)} description="技术参数：220v" />
               </Card>
             </Col>
           })
