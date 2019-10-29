@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import { Card } from 'antd'
 import { smart } from '@gem-mine/durex'
-import { groupBy, isEqual } from 'lodash'
+import groupBy from 'lodash/groupBy'
+import isEqual from 'lodash/isEqual'
 import style from './style.scss'
 import intl from '@gem-mine/intl'
 

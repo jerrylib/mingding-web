@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import { Timeline as TimeLineAntd } from 'antd'
 import { smart } from '@gem-mine/durex'
-import { map, reverse } from 'lodash'
+import map from 'lodash/map'
+import reverse from 'lodash/reverse'
 import intl from '@gem-mine/intl'
 const { Item } = TimeLineAntd
 

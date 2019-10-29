@@ -2,7 +2,8 @@ import React, { Component } from 'react'
 import style from './style.scss'
 import { Col } from 'antd'
 import { smart } from '@gem-mine/durex'
-import { first, isEmpty } from 'lodash'
+import isEmpty from 'lodash/isEmpty'
+import first from 'lodash/first'
 import intl from '@gem-mine/intl'
 
 @smart(

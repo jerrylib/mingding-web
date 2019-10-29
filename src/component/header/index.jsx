@@ -3,7 +3,8 @@ import { Link, urlFor } from '@gem-mine/durex-router'
 import style from './style.scss'
 import { Row, Col, Icon } from 'antd'
 import { smart } from '@gem-mine/durex'
-import { first, isEmpty } from 'lodash'
+import first from 'lodash/first'
+import isEmpty from 'lodash/isEmpty'
 import intl from '@gem-mine/intl'
 
 @smart(

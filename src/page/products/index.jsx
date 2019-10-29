@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Col, Card, Modal } from 'antd'
 import { smart } from '@gem-mine/durex'
-import { filter } from 'lodash'
+import filter from 'lodash/filter'
 import ProductsCard from '../../component/products-card/index'
 import intl from '@gem-mine/intl'
 const { Meta } = Card

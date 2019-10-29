@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { List, Badge, Icon, Card } from 'antd'
-import { filter } from 'lodash'
+import filter from 'lodash/filter'
 import style from './style.scss'
 import { Link, urlFor } from '@gem-mine/durex-router'
 import { smart } from '@gem-mine/durex'

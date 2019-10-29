@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import { Col, Typography, Divider, Empty } from 'antd'
 import { smart } from '@gem-mine/durex'
-import { find, isEmpty } from 'lodash'
+import find from 'lodash/find'
+import isEmpty from 'lodash/isEmpty'
 import { withRouter } from '@gem-mine/durex-router'
 import style from './style'
 const { Title, Paragraph, Text } = Typography
