@@ -23,7 +23,7 @@ class TimeLine extends Component {
     return (
       <TimeLineAntd>
         {
-          map(reverse(timeLine), (timeLineItem, index) => {
+          map((timeLine), (timeLineItem, index) => {
             const { title, date } = timeLineItem
             return <Item key={index}>{intl.get(title)} {date}</Item>
           })

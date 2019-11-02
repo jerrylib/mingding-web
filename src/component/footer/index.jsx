@@ -21,7 +21,7 @@ class Footer extends Component {
     }
     const { address, name, email, tels } = contactInfo
     return (<div className={style.wrapper}>
-      <Col span={24}>{intl.get('版权所有')}：Copyright {1 + new Date().getFullYear()} {intl.get(name)} {intl.get('客服信箱')}：{email} {intl.get('公司电话')}：{first(tels)}</Col>
+      <Col span={24}>{intl.get('版权所有')}：@Copyright {1 + new Date().getFullYear()} {intl.get(name)} {intl.get('客服信箱')}：{email} {intl.get('公司电话')}：{first(tels)}</Col>
       <Col span={24}>{intl.get('公司地址')}：{intl.get(address)}</Col>
     </div>)
   }

@@ -4,6 +4,7 @@ import { smart } from '@gem-mine/durex'
 import AboutUs from '../../component/about-us-card/index'
 import ArticleList from '../../component/article-list/index'
 import HotSales from '../../component/hot-sales/index'
+import ContactCard from '../../component/contact-card/index'
 
 @smart(
   state => {
@@ -21,10 +22,15 @@ class Main extends Component {
   render() {
     return <Row>
       <Col span={8} style={{ paddingRight: 5 }}>
-        <HotSales />
         <AboutUs />
       </Col>
-      <Col style={{ backgroundColor: '#fefefe' }} span={16}>
+      <Col span={8} style={{ paddingRight: 5 }}>
+        <HotSales />
+      </Col>
+      <Col span={8} >
+        <ContactCard />
+      </Col>
+      <Col style={{ backgroundColor: '#fefefe', paddingTop: 5 }} span={24}>
         <ArticleList />
       </Col>
     </Row >

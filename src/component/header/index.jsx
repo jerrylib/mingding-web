@@ -70,19 +70,20 @@ class Header extends Component {
             <div className={style.logo} />
           </Col>
           <Col span={12} style={{ padding: '25px 0' }}>
-            <span className={style.name}>{intl.get(name)}</span>
+            <span style={{ letterSpacing: intl.options.currentLocale === 'en' ? 0 : 6 }} className={style.name}>{intl.get(name)}</span>
             <p>{intl.get(eName)}</p>
           </Col>
           <Col span={6} style={{ padding: 29 }}>
             <Col span={24}>
               {/* <a onClick={this.setIndex}>设为首页</a>
               | <a onClick={this.addFavorite}>加入收藏</a>  */}
-              <a onClick={() => this.setLanguage('zh-CN')}>中文</a> | <a onClick={() => this.setLanguage('en')}>English</a> | <Link to={urlFor('page.contact')}>
+              <a onClick={() => this.setLanguage('zh-CN')}>中文</a> | <a onClick={() => this.setLanguage('en')}>English</a> | <Link to={urlFor('page.home')}>
                 {intl.get('联系我们')}
               </Link>
             </Col>
             <Col span={24} className={style.phone}>
-              <Icon type="phone" /> {intl.get('服务电话')}：<span className={style.phoneNumber}>{first(tels)}</span>
+              {/* <Icon type="phone" /> {intl.get('服务电话')}： */}
+              <span className={style.phoneNumber}>{first(tels)}</span>
             </Col>
           </Col>
         </Col>

@@ -7,7 +7,7 @@ class Contact extends Component {
     this.state = {}
   }
   render() {
-    return <Col span={24}>
+    return <Col span={8}>
       <ContactCard />
     </Col>
   }

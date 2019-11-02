@@ -32,7 +32,7 @@ class HotSales extends Component {
           <Carousel easing autoplay effect={'fade'}>
             {
               map(hotProducts, product => <div key={product.id}>
-                <img className={style.imageItem} src={product.logo} alt="" />
+                <img style={{ height: '207px', margin: 'auto' }} className={style.imageItem} src={product.logo} alt="" />
               </div>)
             }
           </Carousel>

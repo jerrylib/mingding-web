@@ -61,11 +61,10 @@ router.register({
         sub: {
           list: {
             index: true,
-            path: '/news-list',
             component: asyncLoader('page/news/list')
           },
           detail: {
-            path: '/news-detail/:id',
+            path: '/:id',
             component: asyncLoader('page/news/detail')
           }
         }

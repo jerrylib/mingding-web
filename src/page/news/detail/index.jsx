@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
-import { Col, Typography, Divider, Empty } from 'antd'
+import { Col, Typography, Divider, Empty, Row } from 'antd'
 import { smart } from '@gem-mine/durex'
 import find from 'lodash/find'
+import map from 'lodash/map'
 import isEmpty from 'lodash/isEmpty'
 import { withRouter } from '@gem-mine/durex-router'
 import style from './style'
@@ -25,7 +26,7 @@ class NewsDetail extends Component {
         <Empty />
       </Col>
     }
-    const { desc, title, publish_time } = currentArticle
+    const { desc, title, publish_time, images = [] } = currentArticle
     return (
       <Col span={24} className={style.article} >
         <Typography>
@@ -33,7 +34,17 @@ class NewsDetail extends Component {
           <Divider />
           <Paragraph>
             {desc}
+
           </Paragraph>
+          <Row>
+            {
+              map(images, image => {
+                return <Col span={24} style={{ padding: '20px 0', textAlign: 'center' }}>
+                  <img src={image} />
+                </Col>
+              })
+            }
+          </Row>
           <Text style={{ float: 'right' }}>{publish_time}</Text>
         </Typography>
 

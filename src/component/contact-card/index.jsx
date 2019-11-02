@@ -18,12 +18,12 @@ class ContactCard extends Component {
   render() {
     const { contactInfo = {} } = this.props
     const { tels = [], fox, email, address, whatapps = [] } = contactInfo
-    return (<Card title={intl.get('联系我们')} style={{ width: 300 }}>
+    return (<Card title={intl.get('联系我们')} >
       {
-        tels.map((tel, index) => <p key={tel}>{intl.get('电&nbsp;话')}{index + 1}： {tel}</p>)
+        tels.map((tel, index) => <p key={tel}>{intl.get('电&nbsp;话')}： {tel}</p>)
       }
       {
-        whatapps.map((whatapp, index) => <p key={whatapp}>whatapps{index + 1}： {whatapp}</p>)
+        whatapps.map((whatapp, index) => <p key={whatapp}>Whatapps： {whatapp}</p>)
       }
       {
         fox && <p>{intl.get('传&nbsp;真')}：{fox}</p>

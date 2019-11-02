@@ -4,6 +4,7 @@ import { smart } from '@gem-mine/durex'
 import filter from 'lodash/filter'
 import ProductsCard from '../../component/products-card/index'
 import intl from '@gem-mine/intl'
+import style from './style'
 const { Meta } = Card
 
 @smart(
@@ -40,15 +41,15 @@ class Products extends Component {
       <Col span={16} style={{ backgroundColor: '#fefefe', border: '1px solid #e8e8e8' }}>
         {
           (type ? filter(products, { type }) : products).map((product, index) => {
-            const { title, logo } = product
+            const { title, logo, desc } = product
             return <Col span={7} offset={1} style={{ paddingBottom: 10 }} key={index}>
               <Card
                 hoverable
                 onClick={() => this.handleClick(product)}
-                style={{ margin: 'auto' }}
+                className={style.productItem}
                 cover={<img alt="example" style={{ height: 150 }} src={logo || 'https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png'} />}
               >
-                <Meta title={intl.get(title)} description="技术参数：220v" />
+                <Meta title={intl.get(title)} description={`${intl.get('技术参数')}：${desc}`} />
               </Card>
             </Col>
           })
@@ -56,12 +57,14 @@ class Products extends Component {
       </Col>
       <Modal
         title={null}
+        bodyStyle={{ padding: 0, textAlign: 'center' }}
         visible={!!currentProduct}
+        style={{ maxHeight: '80%', maxWidth: '80%' }}
         footer={null}
-        closable={false}
+        closable
         onCancel={() => this.handleClick(null)}
       >
-        <img alt="example" src={currentProduct && currentProduct.logo} />
+        {currentProduct && <img style={{ maxHeight: 400 }} alt="example" src={currentProduct && currentProduct.logo} />}
       </Modal>
     </Col>
   }

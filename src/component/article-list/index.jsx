@@ -5,6 +5,7 @@ import style from './style.scss'
 import { Link, urlFor } from '@gem-mine/durex-router'
 import { smart } from '@gem-mine/durex'
 import intl from '@gem-mine/intl'
+import moment from 'moment'
 
 @smart(
   state => {
