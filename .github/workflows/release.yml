@@ -1,0 +1,30 @@
+name: Release
+on:
+  push:
+    branches:
+      - master
+jobs:
+  deploy-web:
+    name: Deploy Web Site
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v3
+      - name: use Node.js 
+        uses: actions/setup-node@v3
+        with: 
+          node-version: 10.2.x 
+      - name: Install
+        uses: borales/actions-yarn@master
+        with:
+          cmd: install
+      - name: Release
+        uses: borales/actions-yarn@master
+        with:
+          cmd: build
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@3.7.1
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BRANCH: gh-pages
+          FOLDER: dist
