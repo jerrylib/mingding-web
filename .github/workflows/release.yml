@@ -15,13 +15,11 @@ jobs:
         with: 
           node-version: 10.2.x 
       - name: Install
-        uses: borales/actions-yarn@master
-        with:
-          cmd: install
-      - name: Release
-        uses: borales/actions-yarn@master
-        with:
-          cmd: build
+        run: |
+          npm install
+      - name: Build
+        run: |
+          npm run build
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@3.7.1
         with:
