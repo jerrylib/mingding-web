@@ -320,6 +320,7 @@ section-bg{
     width:25vw;
     height: 20vw;
     overflow: hidden;
+    padding: 1rem;
 }
 
 .case-item img{
